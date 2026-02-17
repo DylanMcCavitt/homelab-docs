@@ -2,7 +2,7 @@
 type: diagram
 area: services
 status: active
-updated: 2026-02-11
+updated: 2026-02-14
 ---
 # Service Topology and Trust Boundaries
 
@@ -30,6 +30,7 @@ flowchart TB
     RP["Reverse Proxy"]:::svc
     GF["Grafana"]:::svc
     JF["Jellyfin"]:::svc
+    BW["Bitwarden (Cloud)<br/>or Vaultwarden (Self-Hosted)"]:::svc
     NAS["DIY NAS"]:::storage
   end
 
@@ -49,6 +50,8 @@ flowchart TB
   PX --> RP
   PX --> GF
   PX --> JF
+  C10 --> BW
+  C30 --> BW
   NAS --> JF
 
   C40 -. "Mgmt GUI access: deny" .-> FW
@@ -71,3 +74,4 @@ flowchart TB
 - Remote administration target model is VPN-first (not broad WAN exposure).
 - Management GUIs should be reachable only from trusted admin sources.
 - Final service placement will be pinned after Proxmox + NAS are online.
+- Secrets management plan is Bitwarden cloud first; optional Vaultwarden self-host can be introduced later.
