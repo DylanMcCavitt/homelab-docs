@@ -28,7 +28,7 @@ updated: 2026-02-11
 ## Public publish workflow
 1. Build allowlisted export:
    - `scripts/build-public-export.sh`
-   - This step also converts Obsidian `[wikilinks](../../wikilinks.md)` to GitHub markdown links and strips Mermaid init directives for compatibility.
+   - This step also converts Obsidian `[wikilinks](../../wikilinks.md)` to GitHub markdown links, strips Mermaid init directives for compatibility, and redacts sensitive backup metadata (paths, filenames, checksums, local host identifiers).
 2. Sync into your separate public repo checkout:
    - `scripts/sync-public-repo.sh /absolute/path/to/homelab-public`
 3. In public repo:
@@ -40,3 +40,4 @@ updated: 2026-02-11
 - `.gitignore` blocks known sensitive artifacts.
 - `.githooks/pre-commit` blocks sensitive paths + high-confidence secret patterns.
 - Public export uses explicit allowlist only.
+- Public export sanitizer removes private operational metadata before publish.

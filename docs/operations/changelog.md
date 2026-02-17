@@ -16,7 +16,7 @@ Copy `docs/operations/change-entry-template.md` for each change.
 ## 2026-02-16 - Proxmox Host Config Backup Exported
 
 - Proxmox host config backup created at: `[recorded-privately]`.
-- Proxmox host backup SHA-256: `[recorded-privately]`.
+- Integrity checksum recorded privately.
 - Archive size at export time: `14K`.
 - Note: `tar` "Removing leading '/'" messages are expected behavior.
 
@@ -32,7 +32,7 @@ Copy `docs/operations/change-entry-template.md` for each change.
 - Added temporary OPNsense anti-lockout rules using a current admin host alias during rule migration.
 - Kept GUI listener broad during transition to reduce lockout risk; hardening remains pending.
 - OPNsense backup exported: `[recorded-privately]`.
-- OPNsense backup SHA-256: `[recorded-privately]`.
+- Integrity checksum recorded privately.
 - Follow-up completed on 2026-02-16: Proxmox host backup exported and logged.
 
 ## 2026-02-14 - MikroTik Config Backup Captured

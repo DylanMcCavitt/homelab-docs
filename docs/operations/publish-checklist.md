@@ -5,10 +5,12 @@ Use this before posting docs to GitHub/blog/social.
 ## Content safety
 
 - [ ] No raw backup/config files included
+- [ ] No backup filenames, backup paths, or checksum values shown
 - [ ] No public IPs or real DDNS/FQDN values exposed
 - [ ] No serials, MAC addresses, usernames, or emails exposed
 - [ ] No keys, tokens, or cert/private material exposed
 - [ ] Hostnames and SSIDs sanitized where needed
+- [ ] No local machine paths (`/Users/...`, `[private-file-redacted]`) exposed
 
 ## Architecture clarity
 

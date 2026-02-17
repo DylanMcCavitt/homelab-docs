@@ -10,6 +10,8 @@
 - Usernames/email addresses tied to admin systems
 - SSID names if personally identifying
 - Raw config backups from firewall/switch/AP
+- Backup artifact metadata (exact filenames, storage paths, hashes/checksums)
+- Local workstation file paths (`/Users/...`, `[private-file-redacted]`)
 
 ## Replace with
 
@@ -20,6 +22,7 @@
 ## Public publishing rule
 
 - Share architecture intent and outcomes, not sensitive implementation details.
+- In public docs, write "backup exported and integrity verified" instead of publishing exact artifact metadata.
 
 ## Verification before publish
 
