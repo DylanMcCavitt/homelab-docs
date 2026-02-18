@@ -11,7 +11,7 @@
 - SSID names if personally identifying
 - Raw config backups from firewall/switch/AP
 - Backup artifact metadata (exact filenames, storage paths, hashes/checksums)
-- Local workstation file paths (`/Users/...`, `[private-file-redacted]`)
+- Local workstation file paths (`[private-file-redacted]`, `[private-file-redacted]`)
 
 ## Replace with
 

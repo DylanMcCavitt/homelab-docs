@@ -2,7 +2,7 @@
 type: guide
 area: operations
 status: active
-updated: 2026-02-11
+updated: 2026-02-17
 ---
 # 03 Operations
 
@@ -20,6 +20,7 @@ updated: 2026-02-11
 - [Change Validation Runbook](operations/runbooks/change-validation.md)
 - [Backup and Restore Runbook](operations/runbooks/backup-restore.md)
 - [Incident Response Runbook](operations/runbooks/incident-response.md)
+- [UniFi Controller Migration (Proxmox, Standard Strict)](operations/runbooks/unifi-proxmox-standard-strict.md)
 
 ## Privacy and Sharing
 - [Redaction Policy](operations/redaction-policy.md)

@@ -2,26 +2,21 @@
 type: roadmap
 area: homelab
 status: active
-updated: 2026-02-17
+updated: 2026-02-18
 ---
 # 04 Roadmap
 
 ## Now
-- Finalize management GUI access policy (trusted sources only).
-- Complete wired cutover from temporary test ports to permanent roles.
-- Clean temporary firewall rules and confirm intended isolation.
+- Execute final cleanup of strict management migration runbook: `docs/operations/runbooks/unifi-proxmox-standard-strict.md`.
+- Migrate AP management from transitional legacy LAN path to VLAN30 management path.
+- Remove temporary LAN control-plane exceptions after AP is confirmed stable on VLAN30.
 - Replace temporary admin-host allow with static trusted-device mappings.
-- Export and catalog OPNsense + Proxmox backup artifacts after current policy cutover.
-
-## Tomorrow (2026-02-18)
-- Policy hardening session: finalize VLAN10 -> VLAN30 management access rules and validate trusted/untrusted matrix.
-- Confirm OPNsense GUI listen interfaces are narrowed from transition-safe settings to intended steady-state.
-- Log validation evidence and residual risk in changelog.
+- Narrow OPNsense GUI listen interfaces from transition-safe settings to intended steady-state.
+- Confirm final management target inventory and clean temporary legacy entries.
 
 ## Next
-- Decide final Proxmox host management placement (stay VLAN10 trusted vs move to VLAN30 infra management).
-- Migrate UniFi controller off Mac to dedicated host.
 - Define service placement for reverse proxy, Grafana, Jellyfin.
+- Stand up Tailscale for VPN-first remote admin baseline.
 - Stand up secrets baseline with Bitwarden (cloud first), then rotate admin credentials.
 
 ## Later

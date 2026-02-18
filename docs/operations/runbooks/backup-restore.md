@@ -3,8 +3,10 @@
 ## Backup standard
 
 - Backup after every significant config change
-- Store encrypted backups in private location
+- Store backups in private repo-local vault: `private/raw-backups/<system>/`
+- Move artifacts out of `[private-file-redacted]` after capture
 - Keep at least 3 historical points per critical system
+- Keep a checksum manifest per system (`SHA256SUMS.txt`)
 
 ## Restore drill cadence
 

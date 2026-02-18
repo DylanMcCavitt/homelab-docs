@@ -10,7 +10,7 @@ Use this before posting docs to GitHub/blog/social.
 - [ ] No serials, MAC addresses, usernames, or emails exposed
 - [ ] No keys, tokens, or cert/private material exposed
 - [ ] Hostnames and SSIDs sanitized where needed
-- [ ] No local machine paths (`/Users/...`, `[private-file-redacted]`) exposed
+- [ ] No local machine paths (`[private-file-redacted]`, `[private-file-redacted]`) exposed
 
 ## Architecture clarity
 
