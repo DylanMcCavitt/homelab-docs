@@ -1,4 +1,17 @@
+---
+type: runbook
+area: operations
+status: active
+updated: 2026-02-19
+tags:
+  - area/operations
+  - type/runbook
+---
 # Runbook: Change Validation
+
+Use alongside:
+- [Backup and Restore Runbook](backup-restore.md)
+- [Change Log](../changelog.md)
 
 ## Pre-check
 

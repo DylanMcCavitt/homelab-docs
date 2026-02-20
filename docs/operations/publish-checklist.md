@@ -1,3 +1,12 @@
+---
+type: checklist
+area: operations
+status: active
+updated: 2026-02-19
+tags:
+  - area/operations
+  - type/checklist
+---
 # Publish Checklist
 
 Use this before posting docs to GitHub/blog/social.
@@ -23,3 +32,8 @@ Use this before posting docs to GitHub/blog/social.
 - [ ] Markdown headings and structure are consistent
 - [ ] Date and timestamp references are clear
 - [ ] Any screenshots are legible and redacted
+
+## Related
+- [Start Here](../00-start-here.md)
+- [Operations](../03-operations.md)
+- [Redaction Policy](redaction-policy.md)

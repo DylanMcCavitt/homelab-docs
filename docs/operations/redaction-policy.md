@@ -1,3 +1,12 @@
+---
+type: policy
+area: operations
+status: active
+updated: 2026-02-19
+tags:
+  - area/operations
+  - type/policy
+---
 # Redaction Policy
 
 ## Never publish
@@ -28,3 +37,8 @@
 
 - Run through `docs/operations/publish-checklist.md`
 - Peer-review your own diff for accidental secrets
+
+## Related
+- [Start Here](../00-start-here.md)
+- [Operations](../03-operations.md)
+- [Publish Checklist](publish-checklist.md)

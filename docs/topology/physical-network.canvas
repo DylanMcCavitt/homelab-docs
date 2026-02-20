@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"p-title","type":"text","text":"Physical Board (Current)","x":-1180,"y":-620,"width":360,"height":80,"color":"6"},
+		{"id":"p-g-main","type":"group","x":-1240,"y":-500,"width":2480,"height":1160,"label":"Switch-Centric Wiring","color":"4"},
+		{"id":"p-wan","type":"text","text":"ISP / WAN","x":-1120,"y":-60,"width":200,"height":90,"color":"2"},
+		{"id":"p-router","type":"text","text":"Router\n(OPNsense)","x":-840,"y":-70,"width":230,"height":110,"color":"6"},
+		{"id":"p-switch","type":"text","text":"MikroTik Switch","x":-150,"y":-70,"width":300,"height":110,"color":"6"},
+		{"id":"p-mini","type":"text","text":"Mini PC\n(Proxmox)","x":420,"y":-290,"width":230,"height":110,"color":"5"},
+		{"id":"p-unifi","type":"text","text":"UniFi U6 Pro","x":760,"y":-70,"width":210,"height":90,"color":"4"},
+		{"id":"p-gaming","type":"text","text":"Gaming PC","x":430,"y":150,"width":210,"height":90,"color":"3"},
+		{"id":"p-fedora","type":"text","text":"Fedora PC","x":100,"y":300,"width":210,"height":90,"color":"3"},
+		{"id":"p-empty","type":"text","text":"Ports 6+\nEmpty","x":-300,"y":300,"width":210,"height":90,"color":"1"}
+	],
+	"edges":[
+		{"id":"pe-1","fromNode":"p-wan","fromSide":"right","toNode":"p-router","toSide":"left","label":"WAN","color":"6"},
+		{"id":"pe-2","fromNode":"p-router","fromSide":"right","toNode":"p-switch","toSide":"left","label":"P1","color":"6"},
+		{"id":"pe-3","fromNode":"p-switch","fromSide":"right","toNode":"p-mini","toSide":"left","label":"P2","color":"5"},
+		{"id":"pe-4","fromNode":"p-switch","fromSide":"right","toNode":"p-unifi","toSide":"left","label":"P3","color":"4"},
+		{"id":"pe-5","fromNode":"p-switch","fromSide":"right","toNode":"p-gaming","toSide":"left","label":"P4","color":"3"},
+		{"id":"pe-6","fromNode":"p-switch","fromSide":"bottom","toNode":"p-fedora","toSide":"top","label":"P5","color":"3"}
+	]
+}

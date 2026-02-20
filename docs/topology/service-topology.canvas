@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"sb-g-services","type":"group","x":-140,"y":-430,"width":1260,"height":940,"color":"5","label":"Service Plane"},
+		{"id":"sb-g-control","type":"group","x":-1240,"y":-430,"width":980,"height":940,"color":"6","label":"Control Plane"},
+		{"id":"sb-g-clients","type":"group","x":-2120,"y":-430,"width":760,"height":940,"color":"4","label":"Access Segments"},
+		{"id":"sb-nas","type":"text","text":"NAS (planned)","x":620,"y":-200,"width":230,"height":90,"color":"5"},
+		{"id":"sb-vpn","type":"text","text":"VPN (planned)","x":620,"y":40,"width":230,"height":90,"color":"3"},
+		{"id":"sb-title","type":"text","text":"Service Board (Current)","x":-2060,"y":-560,"width":340,"height":80,"color":"6"},
+		{"id":"sb-v10","type":"text","text":"V10 Trusted","x":-2010,"y":-220,"width":260,"height":90,"color":"6"},
+		{"id":"sb-v30","type":"text","text":"V30 Mgmt","x":-2010,"y":-60,"width":260,"height":90,"color":"6"},
+		{"id":"sb-v40","type":"text","text":"V40 Guest","x":-2010,"y":130,"width":260,"height":90,"color":"2"},
+		{"id":"sb-v50","type":"text","text":"V50 IoT","x":-2010,"y":290,"width":260,"height":90,"color":"5"},
+		{"id":"sb-ap","type":"text","text":"U6 Pro\nlegacy mgmt IP","x":-360,"y":70,"width":250,"height":100,"color":"4"},
+		{"id":"sb-fw","type":"text","text":"OPNsense","x":-1200,"y":85,"width":260,"height":110,"color":"6"},
+		{"id":"sb-prox","type":"text","text":"Proxmox\n10.0.30.20","x":-20,"y":-200,"width":240,"height":100,"color":"5"},
+		{"id":"sb-secrets","type":"text","text":"Bitwarden","x":-20,"y":40,"width":220,"height":90,"color":"3"},
+		{"id":"sb-legend","type":"text","text":"Blue = allowed\\nRed = blocked mgmt","x":-20,"y":220,"width":260,"height":100,"color":"1"},
+		{"id":"sb-v20","type":"text","text":"V20 Workloads","x":300,"y":-200,"width":230,"height":90,"color":"5"},
+		{"id":"sb-dns","type":"text","text":"DNS / DHCP","x":-640,"y":-290,"width":230,"height":90,"color":"4"},
+		{"id":"sb-sw","type":"text","text":"MikroTik","x":-700,"y":-155,"width":230,"height":90,"color":"4"},
+		{"id":"sb-uos","type":"text","text":"UniFi OS\n10.0.30.21","x":-710,"y":220,"width":250,"height":100,"color":"4"}
+	],
+	"edges":[
+		{"id":"sbe-1","fromNode":"sb-v10","fromSide":"right","toNode":"sb-fw","toSide":"left","color":"6"},
+		{"id":"sbe-2","fromNode":"sb-v30","fromSide":"right","toNode":"sb-fw","toSide":"left","color":"6"},
+		{"id":"sbe-3","fromNode":"sb-v40","fromSide":"right","toNode":"sb-fw","toSide":"left","color":"1","label":"blocked"},
+		{"id":"sbe-4","fromNode":"sb-v50","fromSide":"right","toNode":"sb-fw","toSide":"left","color":"1","label":"blocked"},
+		{"id":"sbe-5","fromNode":"sb-fw","fromSide":"right","toNode":"sb-dns","toSide":"left","color":"6"},
+		{"id":"sbe-6","fromNode":"sb-fw","fromSide":"right","toNode":"sb-sw","toSide":"left","color":"6"},
+		{"id":"sbe-7","fromNode":"sb-fw","fromSide":"right","toNode":"sb-uos","toSide":"left","color":"6"},
+		{"id":"sbe-8","fromNode":"sb-sw","fromSide":"right","toNode":"sb-ap","toSide":"left","color":"4","label":"reach"},
+		{"id":"sbe-9","fromNode":"sb-uos","fromSide":"right","toNode":"sb-ap","toSide":"left","color":"4","label":"inform"},
+		{"id":"sbe-10","fromNode":"sb-fw","fromSide":"right","toNode":"sb-prox","toSide":"left","color":"5"},
+		{"id":"sbe-11","fromNode":"sb-prox","fromSide":"right","toNode":"sb-v20","toSide":"left","color":"5"},
+		{"id":"sbe-12","fromNode":"sb-v20","fromSide":"right","toNode":"sb-nas","toSide":"left","color":"5"},
+		{"id":"sbe-13","fromNode":"sb-v10","fromSide":"right","toNode":"sb-secrets","toSide":"left","color":"3"},
+		{"id":"sbe-14","fromNode":"sb-v30","fromSide":"right","toNode":"sb-secrets","toSide":"left","color":"3"},
+		{"id":"sbe-15","fromNode":"sb-vpn","fromSide":"left","toNode":"sb-fw","toSide":"right","color":"3"}
+	]
+}

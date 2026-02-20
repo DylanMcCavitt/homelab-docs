@@ -41,3 +41,8 @@ updated: 2026-02-11
 - `.githooks/pre-commit` blocks sensitive paths + high-confidence secret patterns.
 - Public export uses explicit allowlist only.
 - Public export sanitizer removes private operational metadata before publish.
+
+## Related
+- [Start Here](../00-start-here.md)
+- [Operations](../03-operations.md)
+- [Publish Checklist](publish-checklist.md)

@@ -414,3 +414,8 @@ set-inform http://UNIFI_CONTROLLER_HOST_IP:8080/inform
 - UniFi required ports: https://help.ui.com/hc/en-us/articles/218506997-UniFi-Network-Required-Ports-Reference
 - UniFi remote/L3 adoption (`set-inform`): https://help.ui.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers
 - Proxmox admin guide (networking/VLAN): https://pve.proxmox.com/pve-docs-9-beta/pve-admin-guide.html
+
+## Related
+- [Start Here](../../00-start-here.md)
+- [Workbench](../../05-workbench.md)
+- [Current Status](../../01-current-status.md)

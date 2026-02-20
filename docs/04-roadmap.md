@@ -2,17 +2,27 @@
 type: roadmap
 area: homelab
 status: active
-updated: 2026-02-18
+updated: 2026-02-20
+tags:
+  - area/planning
+  - type/roadmap
+icon: "LiRoute"
 ---
 # 04 Roadmap
 
+Navigation:
+- [Start Here](00-start-here.md)
+- [Workbench](05-workbench.md)
+
 ## Now
-- Execute final cleanup of strict management migration runbook: `docs/operations/runbooks/unifi-proxmox-standard-strict.md`.
-- Migrate AP management from transitional legacy LAN path to VLAN30 management path.
-- Remove temporary LAN control-plane exceptions after AP is confirmed stable on VLAN30.
-- Replace temporary admin-host allow with static trusted-device mappings.
-- Narrow OPNsense GUI listen interfaces from transition-safe settings to intended steady-state.
-- Confirm final management target inventory and clean temporary legacy entries.
+- Execute hardening closeout run (`MGMT_GUI_PORTS` cleanup, legacy UniFi `Default` object decision, full validation matrix).
+- Stand up Bitwarden baseline and begin staged credential rotation.
+- Define first production service placement on VLAN20 with explicit allow-list policy.
+- Review management GUI port alias and remove legacy `8443` if no longer required.
+- Remove or clearly mark the legacy UniFi `Default` network object if no dependencies remain.
+
+Execution note:
+- Run active session tasks from [Workbench](05-workbench.md).
 
 ## Next
 - Define service placement for reverse proxy, Grafana, Jellyfin.

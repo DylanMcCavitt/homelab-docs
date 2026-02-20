@@ -1,7 +1,7 @@
 ---
 type: changelog
 area: operations
-updated: 2026-02-18
+updated: 2026-02-20
 ---
 # Homelab Change Log
 
@@ -12,6 +12,72 @@ Use this file for chronological, operator-grade change history.
 Copy `docs/operations/change-entry-template.md` for each change.
 
 ---
+
+## 2026-02-20 - Hardening Closeout Preflight Confirmed + Backup Vault Hygiene
+
+- Completed lockout preflight for segmentation closeout:
+  - current admin source/IP on trusted VLAN confirmed
+  - OPNsense GUI listen scope and port confirmed
+  - fallback console path confirmed
+  - fresh rollback backup confirmed
+  - management target alias coverage reviewed
+- Moved fresh OPNsense backup export (`[redacted-hostname]-20260220014906.xml`) from local Downloads staging into `private/raw-backups/opnsense/`.
+- Updated OPNsense private checksum manifest (`private/raw-backups/opnsense/SHA256SUMS.txt`) with the latest backup file.
+- Set next execution step: apply `MGMT_GUI_PORTS` cleanup (legacy `8443` removal after dependency check), then re-run full validation matrix before service rollout.
+
+## 2026-02-20 - Legacy LAN Converted to Breakglass Interface
+
+- Converted legacy `LAN` to `LAN_BREAKGLASS` with static `10.255.255.1/24` to retain emergency recovery access without active production use.
+- Removed Dnsmasq interface binding for legacy LAN and removed legacy `192.168.1.0/24` DHCP scope.
+- Replaced permissive legacy behavior with explicit `Breakglass LAN deny all` firewall rule on LAN interface.
+- Confirmed management remains on VLAN interfaces (`VLAN10_Trusted`, `VLAN30_Mgmt`) and preserved existing segmentation policy.
+- Archived post-change OPNsense exports (`aliases`, `rules`, full `config`) and MikroTik backup with checksum updates.
+
+## 2026-02-19 - MikroTik Mgmt VLAN30 Cutover + SSID Finalization
+
+- Completed MikroTik switch management move to VLAN30 with static management IP `10.0.30.82`.
+- Resolved transient access interruption during SwOS System tuning and validated stable post-change reachability on the new management IP.
+- Finalized legacy management cleanup in OPNsense aliases by removing `192.168.1.x` management targets.
+- Removed duplicate switch management target from `MGMT_TARGETS` alias (`10.0.10.82`) after VLAN30 cutover validation.
+- Archived final post-cleanup alias export snapshot (`opnsense-aliases-2026-02-20-v6.json`) with checksum manifest update.
+- Removed temporary `lab-temp` SSID after successful Trusted/Guest/IoT validation checks.
+- Archived latest OPNsense exports (`aliases`, `rules`, full `config`) and new MikroTik backup with checksum updates:
+  - `private/raw-backups/opnsense/exports/2026-02-19/`
+  - `private/raw-backups/opnsense/`
+  - `private/raw-backups/mikrotik/`
+
+## 2026-02-19 - AP Management Migration Completed + OPNsense Policy Cleanup
+
+- Moved U6 Pro management from legacy LAN addressing to VLAN30 and confirmed stable `Online` state in UniFi.
+- Removed temporary LAN AP-to-controller transition rules after successful cutover validation.
+- Switched VLAN10 admin management rules from `ADMIN_TEMP_TRUSTED_HOST` to `ADMIN_TRUSTED_HOSTS`.
+- Completed alias/rule taxonomy pass in OPNsense using categories for filtering, audit, and cleanup workflows.
+- Removed legacy/unused alias references from active policy set and re-exported current rules/aliases.
+- Archived new firewall exports and full OPNsense config backup with updated checksum manifests in the private backup vault.
+
+## 2026-02-19 - OPNsense GUI Scope Hardened (Steady-State Interfaces)
+
+- Restricted OPNsense Web GUI listen interfaces to `VLAN10_Trusted` and `VLAN30_Mgmt` only.
+- Confirmed management GUI remains reachable on `10.0.10.1` and `10.0.30.1`.
+- Confirmed legacy GUI path on `192.168.1.1` is no longer reachable.
+- Captured fresh post-hardening aliases/rules exports and full config backup, then archived with updated checksums.
+
+## 2026-02-19 - Obsidian Vault Organization Pass
+
+- Added a dedicated execution dashboard:
+  - `docs/05-workbench.md`
+- Added a Kanban operations board:
+  - `docs/06-kanban.md`
+- Refined navigation structure from `docs/00-start-here.md` with area-based links.
+- Standardized missing frontmatter on operational/checklist/runbook/reference notes.
+- Updated topology notes to reflect current controller placement and Proxmox uplink context.
+- Added Obsidian visual organization settings:
+  - graph color groups in `.obsidian/graph.json`
+  - color-coded tab snippet in `.obsidian/snippets/homelab-tabs.css`
+  - style-settings-ready foundation snippet in `.obsidian/snippets/homelab-ux-foundation.css`
+  - snippet activation in `.obsidian/appearance.json`
+- Added Iconize rule baseline for key docs/folders and enabled icon display in tabs/title/frontmatter.
+- Cleaned workspace recents in `.obsidian/workspace.json` to focus on current docs flow.
 
 ## 2026-02-18 - UniFi OS Server Cutover Completed (VLAN30 Controller)
 
@@ -117,3 +183,8 @@ Copy `docs/operations/change-entry-template.md` for each change.
   - VLAN20 test host: `10.0.20.x`, gateway `10.0.20.1`, DNS `10.0.20.1`, internet pass
   - VLAN30 test host: `10.0.30.x`, gateway `10.0.30.1`, DNS `10.0.30.1`, internet pass
 - Identified follow-up: OPNsense GUI access from VLAN30/trusted-admin path requires rule/listen-interface review.
+
+## Related
+- [Start Here](../00-start-here.md)
+- [Workbench](../05-workbench.md)
+- [Change Entry Template](change-entry-template.md)

@@ -1,4 +1,15 @@
+---
+type: template
+area: operations
+status: active
+updated: 2026-02-19
+tags:
+  - area/operations
+  - type/template
+---
 # Change Entry Template
+
+Use with [Change Log](changelog.md).
 
 ## Change
 - Date:

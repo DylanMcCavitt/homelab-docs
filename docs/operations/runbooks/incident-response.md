@@ -1,4 +1,17 @@
+---
+type: runbook
+area: operations
+status: active
+updated: 2026-02-19
+tags:
+  - area/operations
+  - type/runbook
+---
 # Runbook: Incident Response
+
+Escalation trail:
+- [Change Log](../changelog.md)
+- [Redaction Policy](../redaction-policy.md)
 
 ## Trigger conditions
 

@@ -7,7 +7,7 @@ Public-facing homelab documentation focused on architecture, segmentation, opera
 
 ## Included
 - Current status and roadmap
-- Network and service topology diagrams (Mermaid)
+- Network and service topology diagrams (canvas-backed markdown views)
 - VLAN design
 - Operations and redaction standards
 

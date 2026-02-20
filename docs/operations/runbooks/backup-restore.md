@@ -1,4 +1,17 @@
+---
+type: runbook
+area: operations
+status: active
+updated: 2026-02-19
+tags:
+  - area/operations
+  - type/runbook
+---
 # Runbook: Backup and Restore
+
+Reference with:
+- [Change Validation Runbook](change-validation.md)
+- [Change Log](../changelog.md)
 
 ## Backup standard
 
