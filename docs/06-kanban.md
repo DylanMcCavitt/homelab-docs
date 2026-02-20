@@ -15,18 +15,25 @@ kanban-plugin: board
 - [ ] Build VLAN20 service deployment template (policy, backup, monitoring)
 
 ## Today
-- [ ] Execute hardening closeout run (alias cleanup, dependency checks, validation matrix)
+- [ ] Complete hardening closeout run (UniFi `Default` object decision + validation matrix)
 - [ ] Remove or mark legacy UniFi `Default` network object after dependency check
-- [ ] Stand up Bitwarden baseline and draft staged credential-rotation checklist
-- [ ] Define first production service on VLAN20 after network hardening
+- [ ] Deliver reverse proxy/TLS baseline (shared ingress, DNS, cert trust model)
+- [ ] Publish Vaultwarden on stable HTTPS LAN hostname (remove SSH tunnel dependency)
+- [ ] Capture Vaultwarden backup and restore checkpoint
+- [ ] Begin staged credential-rotation checklist
 
 ## In Progress
 - [ ] Refine vault UX and navigation for faster daily execution
 
 ## Blocked
-- [ ] Finalize secrets rotation schedule after Bitwarden baseline confirmation
+- [ ] Finalize secrets rotation schedule after Vaultwarden HTTPS ingress + restore checkpoint
 
 ## Done
+- [x] Provisioned dedicated Debian 13 `VLAN20` VM for Vaultwarden runtime
+- [x] Installed Docker runtime and deployed Vaultwarden baseline (`vaultwarden/server:1.35.3`) with persistent data path
+- [x] Created initial Vaultwarden owner account and disabled open signups (`SIGNUPS_ALLOWED=false`)
+- [x] Validated Vaultwarden service health on local VM path (`HTTP 200`)
+- [x] Removed legacy `8443` from `MGMT_GUI_PORTS` and validated admin management reachability
 - [x] Hardening closeout preflight completed (admin source, GUI listen scope, fallback path, backup, target aliases)
 - [x] Moved fresh OPNsense backup from local Downloads staging into private backup vault and updated checksum manifest
 - [x] Proxmox host management path active on VLAN30

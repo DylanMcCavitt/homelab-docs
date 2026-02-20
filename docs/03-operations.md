@@ -2,7 +2,7 @@
 type: guide
 area: operations
 status: active
-updated: 2026-02-19
+updated: 2026-02-20
 tags:
   - area/operations
   - type/guide
@@ -31,6 +31,8 @@ Navigation:
 - [Backup and Restore Runbook](operations/runbooks/backup-restore.md)
 - [Incident Response Runbook](operations/runbooks/incident-response.md)
 - [UniFi Controller Migration (Proxmox, Standard Strict)](operations/runbooks/unifi-proxmox-standard-strict.md)
+- [Reverse Proxy + TLS Baseline](operations/runbooks/reverse-proxy-tls-baseline.md)
+- [Vaultwarden Baseline Rollout](operations/runbooks/vaultwarden-baseline.md)
 
 ## Privacy and Sharing
 - [Redaction Policy](operations/redaction-policy.md)

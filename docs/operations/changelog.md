@@ -13,6 +13,28 @@ Copy `docs/operations/change-entry-template.md` for each change.
 
 ---
 
+## 2026-02-20 - Vaultwarden Baseline Bootstrapped on VLAN20 (Tunnel Mode)
+
+- Provisioned dedicated Debian 13 VM for Vaultwarden on `VLAN20` and validated network path (`10.0.20.x`, gateway `10.0.20.1`).
+- Installed Docker runtime, deployed Vaultwarden (`vaultwarden/server:1.35.3`), and mounted persistent data path.
+- Completed initial owner-account bootstrap and disabled open signups (`SIGNUPS_ALLOWED=false`).
+- Verified local service health (`HTTP 200` on VM localhost endpoint).
+- Recorded current access state as bootstrap-only (SSH tunnel/local path); stable LAN HTTPS publishing is pending.
+- Added decision note: reverse proxy/TLS ingress should be delivered as a dedicated platform step before service-by-service publishing.
+
+## 2026-02-20 - Secrets Baseline Decision Updated to Vaultwarden
+
+- Updated active service plan from Bitwarden cloud-first to self-hosted Vaultwarden baseline on `VLAN20`.
+- Aligned current status, roadmap, workbench, kanban, and service-topology notes with Vaultwarden-first rollout.
+- Added dedicated `homelab-vaultwarden-guide` skill for upstream-aligned deployment, hardening, and restore-checkpoint workflows.
+
+## 2026-02-20 - Hardening Closeout Phase 2 Completed (`MGMT_GUI_PORTS`)
+
+- Removed legacy `8443` from `MGMT_GUI_PORTS` after dependency check.
+- Confirmed management reachability remained intact from trusted admin paths (OPNsense, Proxmox, UniFi OS, MikroTik).
+- Kept remaining closeout work focused on UniFi `Default` object decision plus full post-closeout validation matrix.
+- Trimmed `docs/01-current-status.md` into a concise now/next dashboard and moved detailed historical context to changelog/kanban.
+
 ## 2026-02-20 - Hardening Closeout Preflight Confirmed + Backup Vault Hygiene
 
 - Completed lockout preflight for segmentation closeout:

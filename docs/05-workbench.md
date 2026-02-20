@@ -37,10 +37,11 @@ obsidian vault=homelab deadends total
 ```
 
 ## Current Priorities
-- Execute hardening closeout run (`MGMT_GUI_PORTS` cleanup + full validation matrix).
+- Complete hardening closeout run (UniFi `Default` object decision + full validation matrix).
 - Remove or mark the legacy UniFi `Default` network object when dependency checks are clear.
-- Prepare Bitwarden baseline and begin staged admin credential rotation plan.
-- Define first production service rollout target on VLAN20 with explicit access policy.
+- Deliver shared reverse proxy/TLS baseline (DNS + certificate trust model).
+- Publish Vaultwarden on stable HTTPS LAN hostname and remove tunnel-only bootstrap access.
+- Capture Vaultwarden backup + restore checkpoint before credential rotation waves.
 
 ## Session Closeout
 1. Update [Current Status](01-current-status.md) and [Roadmap](04-roadmap.md).

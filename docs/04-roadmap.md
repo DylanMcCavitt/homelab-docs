@@ -15,22 +15,20 @@ Navigation:
 - [Workbench](05-workbench.md)
 
 ## Now
-- Execute hardening closeout run (`MGMT_GUI_PORTS` cleanup, legacy UniFi `Default` object decision, full validation matrix).
-- Stand up Bitwarden baseline and begin staged credential rotation.
-- Define first production service placement on VLAN20 with explicit allow-list policy.
-- Review management GUI port alias and remove legacy `8443` if no longer required.
-- Remove or clearly mark the legacy UniFi `Default` network object if no dependencies remain.
+- Complete hardening closeout run (legacy UniFi `Default` object decision + full validation matrix).
+- Deliver reverse proxy/TLS baseline as a dedicated platform step (not per-service one-offs).
+- Publish Vaultwarden from bootstrap mode to stable HTTPS LAN hostname and remove tunnel dependency.
+- Capture Vaultwarden backup/restore checkpoint, then begin staged credential rotation.
 
 Execution note:
 - Run active session tasks from [Workbench](05-workbench.md).
 
 ## Next
-- Define service placement for reverse proxy, Grafana, Jellyfin.
+- Define service placement for Grafana and Jellyfin after ingress baseline is stable.
 - Stand up Tailscale for VPN-first remote admin baseline.
-- Stand up secrets baseline with Bitwarden (cloud first), then rotate admin credentials.
+- Continue credential rotation waves after Vaultwarden HTTPS + restore checkpoint sign-off.
 
 ## Later
 - Integrate DIY NAS for media and backups.
 - Add VPN-first remote admin (Tailscale/WireGuard).
-- Evaluate self-hosted Vaultwarden after core network and backup posture are stable.
 - Formalize observability dashboards and backup restore drills.
